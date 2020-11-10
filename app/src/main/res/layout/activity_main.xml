@@ -3,6 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="searchViewModel"
+            type="com.siba.searchmvvmpractice.viewmodel.SearchViewModel" />
+        <variable
+            name="fragmentManager"
+            type="androidx.fragment.app.FragmentManager" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,14 +38,20 @@
             android:id="@+id/tablayout_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/search_main"/>
+            app:layout_constraintTop_toBottomOf="@+id/search_main"
+            app:setTabItem="@{searchViewModel.tabItems}"
+            app:setViewModel="@{searchViewModel}"
+            app:setViewPosition="@{searchViewModel.position}"/>
 
-        <androidx.viewpager2.widget.ViewPager2
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_main_search"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tablayout_main" />
+            app:layout_constraintTop_toBottomOf="@+id/tablayout_main"
+            app:setFragmentManager="@{fragmentManager}"
+            app:setViewModel="@{searchViewModel}"
+            app:setViewPosition="@{searchViewModel.position}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
