@@ -1,11 +1,18 @@
 package com.siba.searchmvvmpractice.singleton
 
+import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.LiveData
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.siba.searchmvvmpractice.adapter.SearchPagerAdapter
+import com.siba.searchmvvmpractice.adapter.SearchViewAdapter
+import com.siba.searchmvvmpractice.model.BookData
 import com.siba.searchmvvmpractice.viewmodel.SearchViewModel
 
 object CustomAdapter {
@@ -74,5 +81,21 @@ object CustomAdapter {
                 }
             }
         }
+    }
+
+    @BindingAdapter("setImgFromUrl")
+    @JvmStatic
+    fun setImageFromUrl(view: ImageView, url: String) {
+        Glide.with(view.context)
+            .load(url)
+            .into(view)
+    }
+
+    @BindingAdapter("setRVAdapter")
+    @JvmStatic
+    fun setRecyclerViewAdapter(view: RecyclerView, data: LiveData<MutableList<BookData>>?) {
+        val adapter = data?.value?.let { SearchViewAdapter(it) }
+        view.adapter = adapter
+        adapter?.notifyDataSetChanged()
     }
 }
