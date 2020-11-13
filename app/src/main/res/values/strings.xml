@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SearchMVVMPractice</string>
+    <string name="interpark_api_key">2034AC9E39C0CEACE7052132C0928CEA3D5B5FEC9AE9ABD8385599668CEEBB5C</string>
 </resources>
