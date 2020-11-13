@@ -8,6 +8,7 @@
         android:label="SearchMyBookOnBookStore"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".SearchApplication"
         android:theme="@style/Theme.SearchMVVMPractice">
         <activity android:name=".ui.MainActivity">
             <intent-filter>
