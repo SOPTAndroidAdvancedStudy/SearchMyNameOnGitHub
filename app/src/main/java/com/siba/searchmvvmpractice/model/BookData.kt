@@ -1,7 +1,9 @@
 package com.siba.searchmvvmpractice.model
 
-data class BookData (
-    val img_book: String,
-    val txt_author: String,
-    val txt_title: String,
+data class SearchBookData (
+    val item: List<BookData>
+) data class BookData (
+    val coverSmallUrl: String,
+    val title: String,
+    val author: String,
 )

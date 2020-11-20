@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.siba.searchmvvmpractice.R
 import com.siba.searchmvvmpractice.databinding.ItemSearchBookBinding
 import com.siba.searchmvvmpractice.model.BookData
+import com.siba.searchmvvmpractice.model.SearchBookData
 
-class SearchViewAdapter(var datas: MutableList<BookData>) : RecyclerView.Adapter<SearchViewAdapter.SearchViewHolder>() {
+class SearchViewAdapter(var datas: SearchBookData) : RecyclerView.Adapter<SearchViewAdapter.SearchViewHolder>() {
 
     inner class SearchViewHolder(private val binding: ItemSearchBookBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: BookData) {
-            Log.d("data", "${data}")
             binding.bookData = data
         }
     }
@@ -26,8 +26,8 @@ class SearchViewAdapter(var datas: MutableList<BookData>) : RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        holder.bind(datas[position])
+        holder.bind(datas.item[position])
     }
 
-    override fun getItemCount() = datas.size
+    override fun getItemCount() = datas.item.size
 }

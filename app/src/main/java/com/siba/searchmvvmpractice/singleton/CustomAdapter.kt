@@ -1,6 +1,5 @@
 package com.siba.searchmvvmpractice.singleton
 
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -13,6 +12,7 @@ import com.google.android.material.tabs.TabLayout
 import com.siba.searchmvvmpractice.adapter.SearchPagerAdapter
 import com.siba.searchmvvmpractice.adapter.SearchViewAdapter
 import com.siba.searchmvvmpractice.model.BookData
+import com.siba.searchmvvmpractice.model.SearchBookData
 import com.siba.searchmvvmpractice.viewmodel.SearchViewModel
 
 object CustomAdapter {
@@ -55,13 +55,14 @@ object CustomAdapter {
                 position: Int,
                 positionOffset: Float,
                 positionOffsetPixels: Int
-            ) { }
+            ) {
+            }
 
             override fun onPageSelected(position: Int) {
                 viewModel.selectPosition(position)
             }
 
-            override fun onPageScrollStateChanged(state: Int) { }
+            override fun onPageScrollStateChanged(state: Int) {}
 
         })
     }
@@ -69,7 +70,7 @@ object CustomAdapter {
     @BindingAdapter("setViewPosition")
     @JvmStatic
     fun setViewPosition(view: View, position: Int) {
-        when(view) {
+        when (view) {
             is ViewPager -> {
                 view.currentItem = position
             }
@@ -93,7 +94,7 @@ object CustomAdapter {
 
     @BindingAdapter("setRVAdapter")
     @JvmStatic
-    fun setRecyclerViewAdapter(view: RecyclerView, data: LiveData<MutableList<BookData>>?) {
+    fun setRecyclerViewAdapter(view: RecyclerView, data: LiveData<SearchBookData>?) {
         val adapter = data?.value?.let { SearchViewAdapter(it) }
         view.adapter = adapter
         adapter?.notifyDataSetChanged()

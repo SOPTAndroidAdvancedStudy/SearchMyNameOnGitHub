@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:setRVAdapter="@{searchViewModel.dummyData}"
+            app:setRVAdapter="@{searchViewModel.searchBookData}"
             tools:listitem="@layout/item_search_book" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

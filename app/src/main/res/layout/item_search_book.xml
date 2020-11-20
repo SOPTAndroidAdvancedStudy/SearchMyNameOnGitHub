@@ -22,7 +22,7 @@
             app:layout_constraintDimensionRatio="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:setImgFromUrl="@{bookData.img_book}"
+            app:setImgFromUrl="@{bookData.coverSmallUrl}"
             tools:src="@drawable/ic_dummy" />
 
         <LinearLayout
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="@{bookData.txt_title}"
+                android:text="@{bookData.title}"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@{bookData.txt_author}"
+                android:text="@{bookData.author}"
                 android:textColor="#979797"
                 tools:text="나관중" />
 

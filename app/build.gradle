@@ -58,9 +58,31 @@ dependencies {
     // Android KTX - viewmodelscope
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
+    // AndroidX KTX - LiveData
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
 
+    // AndroidX - Coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0"
 
+    // Fragment-KTX: delegate pattern for activity viewmodels
     implementation "androidx.fragment:fragment-ktx:1.2.5"
+
+    // Retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.5'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    // Moshi
+    implementation 'com.squareup.retrofit2:converter-moshi:2.5.0'
+
+    //LifeCycle
+    implementation 'androidx.lifecycle:lifecycle-common:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
+    implementation 'android.arch.lifecycle:extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+
+    //Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0'
 }
